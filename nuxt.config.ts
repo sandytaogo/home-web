@@ -58,7 +58,8 @@ export default defineNuxtConfig({
   },
   devServer: {
     host:'0.0.0.0',
-    port:3050
+    port:3050,
+    url:'http://127.0.0.1:3050'
   },
   vite: {
     plugins:[],

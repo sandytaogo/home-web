@@ -1,15 +1,34 @@
 <template>
     <h1>About</h1>
-    <div class="content"></div>
+    <div class="content">
+        数据分析就是把最原始的数据,通过一系列处理步骤,变成对我们真正有意义的“信息”的过程。主要任务是对收集到的数据进行统计分析，以最大化地挖掘数据的功能和价值，能够在看似杂乱无章的数据中找到隐藏的规律和趋势。
+        <br/> <br/>
+        <p>
+            金融（Finance、Finaunce）是市场主体利用金融工具将资金从资金盈余方流向资金稀缺方的经济活动。金融作为现代经济的血脉，承担着资金融通、市场定价、资源配置、信息提供、结构调整等重要功能，是推动高质量发展、建设现代化经济体系和国家核心竞争力的重要组成部分。
+        </p>
+        <br/>
+        <p>提取有价值信息以支持决策的过程。其核心在于将原始数据转化为可指导决策的洞察，需经历数据收集、清洗、处理及多维度解读</p>
+       
+    </div>
 </template>
 
 
 
 <style scoped>
 
-    .content {
-        min-height: 500px;
+    h1 {
+        margin-left: 8%;
     }
 
+    .content {
+        min-height: 500px;
+        margin: 2% 8%;
+    }
+
+    @media (min-width: 769px) {
+        .content {
+            font-size: 18px;
+        }
+    }
 
 </style>

@@ -19,18 +19,18 @@
                     <!-- 菜单 -->
                     <nav id="top-navbar" class="">
                         <ul class="nav navbar-nav list-unstyled">
-                            <li class="menu-list hover-open">
-                                <a href="javascript:;" @click="handerHeaderShowClick" target="" class="btn-next collapsed top-navbar-text">
+                            <li class="menu-list hover-open" @click="handerHeaderShowClick">
+                                <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
                                     社融数据
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                                 <div class="nav-open menu-fixed-right header-content-n1" data-mod-name="child-component" data-mod-id="tabs[0]">
-                                    <a href="javascript:;" class="btn-nav-back hidden-md hidden-lg">
+                                    <a href="javascript:;" @click="handerCloseChildMenuClick" class="btn-nav-back hidden-md hidden-lg">
                                         <span class="iconfont icon-arrow-lift"></span>
                                         返回主菜单
                                     </a>
                                     <div class="nav-ani ">
-                                        <div class="title hidden-md hidden-lg">个人及家庭产品</div>
+                                        <div class="title hidden-md hidden-lg">社融数据</div>
                                         <div class="mask"></div>
                                         <div class="container-custom">
                                             <div class="new-font-box">
@@ -63,7 +63,7 @@
                                                                     <a href="https://xinxinji.cn/finance/index.html" target="_blank" class="" rel="noopener">
                                                                         
                                                                         <span class="menu-icon icon-pic"></span>
-                                                                        <p>金融可视化大屏</p>
+                                                                        <p>可视化大屏</p>
                                                                     </a>
                                                                 </li>
                                                                 
@@ -146,11 +146,162 @@
                                 </div>
                             </li>
 
-                            <li class="menu-list hover-open">
+                            <li class="menu-list hover-open" @click="handerHeaderShowClick" >
                                 <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
                                     在线实例
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
+                                <div class="nav-open menu-fixed-right header-content-n1" data-mod-name="child-component" data-mod-id="tabs[3]">
+                                    <a href="javascript:;" @click="handerCloseChildMenuClick" class="btn-nav-back hidden-md hidden-lg">
+                                        <span class="iconfont icon-arrow-lift"></span>
+                                        返回主菜单
+                                    </a>
+                                    <div class="nav-ani ">
+                                        <div class="title hidden-md hidden-lg">在线实例</div>
+                                        <div class="mask"></div>
+                                        <div class="container-custom">
+                                            <div class="">
+                                                <div class="row">
+                                                    <div class="col-md-4 header-content-n1">
+                                                        <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-130" aria-controls="header-list-130" aria-expanded="true">
+                                                            菜单列表<span class="iconfont icon-arrow-down"></span>
+                                                            <div class="line"></div>
+                                                        </h3>
+                                                        
+                                                        <div class="row collapse navbar-collapse " id="header-list-130">
+                                                            <div class="">
+                                                                <div class="list-nav">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/stock/index.html?isOnline=0" target="_blank" rel="noopener">
+                                                                                社融仿真
+                                                                            </a>
+                                                                        </li>
+                                                                        
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/user/index" target="_blank" rel="noopener">
+                                                                                后台管理系统
+                                                                            </a>
+                                                                        </li>
+                                                                        
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/bpm/index.html" target="_blank" rel="noopener">
+                                                                                在线流程设计
+                                                                            </a>
+                                                                        </li>
+                                                                         <li>
+                                                                            <a href="https://www.sse.com.cn/market/bonddata/statistic/" target="_blank" class="read-more" rel="noopener">
+                                                                                融资额统计
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/finance/index.html" target="_blank" rel="noopener">
+                                                                                金融可视化大屏
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                        <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-131" aria-controls="header-list-131" aria-expanded="true">
+                                                            服务监控<span class="iconfont icon-arrow-down"></span>
+                                                            <div class="line"></div>
+                                                        </h3>
+                                                        <div class="row collapse navbar-collapse " id="header-list-131">
+                                                            <div class="">
+                                                                <div class="list-nav">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/user/hystrix/monitor?stream=https%3A%2F%2Fxinxinji.cn%2Fstock%2Factuator%2Fhystrix.stream&title=stock-application" target="_blank" rel="noopener">
+                                                                                Hystrix容灾监控平台
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/user/zipkin/" target="_blank" rel="noopener">
+                                                                                Zipkin微服务链路平台
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/junit/jacoco/index.html" target="_blank" rel="noopener">
+                                                                                框架单元测试报告
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/vue-vite-analysis/bpmn-stats.html" target="_blank" rel="noopener">
+                                                                                工程化依赖分析
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="javascript:void(0);" class="read-more" target="_blank" rel="noopener">
+                                                                                <span>查看更多</span>
+                                                                                <span class="iconfont icon-arrow-right"></span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                        <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-132" aria-controls="header-list-132" aria-expanded="true">
+                                                            AI辅助工具<span class="iconfont icon-arrow-down"></span>
+                                                            <div class="line"></div>
+                                                        </h3>
+                                                        
+                                                        <div class="row collapse navbar-collapse " id="header-list-132">
+                                                            
+                                                            <div class="">
+                                                                <div class="list-nav">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a href="https://xinxinji.cn/ai/imagetotext.html" class="read-more" target="_blank" rel="noopener">
+                                                                                AI图像识别升级中
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="javascript:;" @click="handerHeaderCloseClick" class="btn-close-nav-ani hidden-sm hidden-xs">
+                                                        <span class="iconfont icon-close"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="nav-open-other" style="float:inline-end;">
+                                            <div class="container-custom">
+                                                <div class="row" style="display: block;">
+                                                    <div class="col-md-3 col-sm-12 col-xs-12">
+                                                        <a href="https://www.sse.com.cn" target="_blank" class="" rel="noopener">
+                                                            <span class="iconfont icon-user"></span>
+                                                            <span>上交所</span>
+                                                            <span class="hwic_open-in-new3"></span>
+                                                        </a>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-3 col-sm-12 col-xs-12 hidden-xs hidden-sm">
+                                                        <a href="https://www.szse.cn/index/index.html" target="_blank" class="" rel="noopener">
+                                                            <span class="iconfont icon-website"></span>
+                                                            <span>深交所</span>
+                                                            <span class="hwic_open-in-new3"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </li>
 
                             <li class="menu-list hover-open">
@@ -213,10 +364,25 @@
     import { defineComponent, ref, toRefs, nextTick, watch } from 'vue'
 
     const header_navbar = defineComponent({
+        name: 'header_component',
         data () {
             return {
-                headerMenuHeight: "500px"
+                clientWidth: 0,
+                headerMenuHeight: "490px"
             }
+        },
+        mounted () {
+            let self = this;
+            self.clientWidth = document.body.clientWidth;
+            //监听屏幕宽度
+            window.onresize = () => {
+                if(self.clientWidth !== document.body.clientWidth) {
+                    self.clientWidth = document.body.clientWidth;
+                }
+            }
+        },
+        watch: {
+                
         },
         methods: {
             handleMobileClick : function(event :any) {
@@ -225,6 +391,15 @@
                     let menuElement = document.querySelector('#top-navbar');
                     if (element && element.classList.contains('menu-box-show-icon')) {
                         element.classList.remove('menu-box-show-icon');
+                        if (menuElement) {
+                            let elementNodes = document.querySelectorAll('.menu-fixed-right');
+                            for (let i = 0; i < elementNodes.length; i++ ) {
+                                let child = elementNodes[i];
+                                if (child.classList && child.getAttribute("data-mod-name") == 'child-component') {
+                                    child.classList.remove("in");
+                                }
+                            }
+                        }
                         if (menuElement) {
                             menuElement.classList.remove("in");
                         }
@@ -245,24 +420,49 @@
              */
             handerHeaderShowClick (event: any) {
                 let element = event.currentTarget;
-                let siblings = Array.from(element.parentNode.children); // 将兄弟节点转换为数组
-                let specificSiblings: any = siblings.filter((sibling: any) => sibling.className === "nav-open menu-fixed-right header-content-n1"); // 查找所有具有特定类的兄弟节点
+                let menuElments: any = document.querySelectorAll(".menu-list");
+                for (let i = 0; i < menuElments.length; i++) {   
+                    menuElments[i].classList.remove('active');
+                };
+                element.parentNode.classList.add('active');
+                console.log(element);
+               
+                let siblings = Array.from(element.children); //将兄弟节点转换为数组
+                // getAttribute('')
+                let specificSiblings: any = siblings.filter((sibling: any) => 
+                    sibling.className === "nav-open menu-fixed-right header-content-n1" ||
+                    sibling.className === "nav-open menu-fixed-right header-content-n1 in"
+                ); // 查找所有具有特定类的兄弟节点
+                
                 if (specificSiblings.length > 0) {
-                    if (specificSiblings[0].style.display == 'block') {
+                    if (this.clientWidth < 1051) {
+                        let element = specificSiblings[0];
+                        if (element && element.classList.contains('in')) {
+                            element.classList.remove('in');
+                        } else if (element && element.classList) {
+                            element.classList.add('in');
+                        }
+                    } else if (specificSiblings[0].style.display == 'block') {
                         specificSiblings[0].style.height = this.headerMenuHeight;
-                        setTimeout(() => {
-                            specificSiblings[0].style.height = '0px';
-                        }, 0);
+                        //连续操作属性不能保证立即渲染，让浏览器强制渲染实现过度效果.
+                        requestAnimationFrame (() => {
+                           specificSiblings[0].style.height = '0px';
+                        });
                         setTimeout(() => {
                             specificSiblings[0].style.display = "none";
                             specificSiblings[0].style.height = '';
                         }, 500);
                     } else {
+                        
+                        let elementShows = document.querySelectorAll('.nav-open.menu-fixed-right.header-content-n1');
+                        elementShows.forEach((element: any) => {
+                            element.style.display = "none";
+                        });
                         specificSiblings[0].style.display = "block";
                         specificSiblings[0].style.height = '0px';
-                        setTimeout(() => {
-                            specificSiblings[0].style.height = this.headerMenuHeight;
-                        }, 0);
+                        //连续操作属性不能保证立即渲染，读取属性让浏览器强制渲染实现过度效果.
+                        document.body.clientWidth;
+                        specificSiblings[0].style.height = this.headerMenuHeight;
                         setTimeout(() => {
                             specificSiblings[0].style.height = '';
                         }, 500);
@@ -279,11 +479,24 @@
                     node.style.height = this.headerMenuHeight;
                     setTimeout(() => {
                         node.style.height = '0px';
-                    }, 0);
+                    }, 24);
                     setTimeout(() => {
                         node.style.display = "none";
                         node.style.height = '';
                     }, 500);
+                }
+            },
+            /**
+             * 关闭子菜单事件.
+             * @param event 
+             */
+            handerCloseChildMenuClick (event: any) {
+                let elementNodes = document.querySelectorAll('.menu-fixed-right');
+                for (let i = 0; i < elementNodes.length; i++ ) {
+                    let child = elementNodes[i];
+                    if (child.classList && child.getAttribute("data-mod-name") == 'child-component') {
+                        child.classList.remove("in");
+                    }
                 }
             }
         }
@@ -292,218 +505,3 @@
     export default header_navbar;
 
 </script>
-
-<style scoped>
-    header .navbar {
-        border: none;
-        height: 66px;
-        margin-bottom: 0;
-    }
-
-    .header {
-        min-height: 66px;
-        position: relative;
-        z-index: 120;
-    }
-
-    .header .logo {
-        width: 130px;
-        margin-left: 15px;
-    }
-
-    header .navbar .navbar-header {
-        background-color: #fff;
-        background-image: url(../assets/img/bg-white.png) !important;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, .2);
-        height: 66px;
-        position: relative;
-        z-index: 10;
-    }
-
-    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
-
-    header.affix {
-        position: fixed;
-        top: 0;
-        transition: transform .5s;
-    }
-
-    header .nav-right {
-        display: none;
-    }
-
-    @media (max-width: 1050px) {
-
-        header .navbar {
-            border-bottom: 1px solid #e6e6e6;
-            border-radius: 0;
-            height: 66px;
-            margin-bottom: 0;
-        }
-
-        .header-mobile-menu {
-            float: right;
-            width: 25px;
-            padding: 25px 35px 15px 15px;
-            cursor: pointer;
-        }
-
-        .header-mobile-menu > span{
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #3c4453;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            transition: transform 0.5s;
-        }
-        
-        .menu-box-show-icon {
-            position: relative;
-        }
-        .menu-box-show-icon > span:nth-child(2) {
-            display: none;
-        }
-        .menu-box-show-icon > span:first-child {
-            transform:rotate(45deg);
-            position: absolute;
-            top: 30px;
-        }
-        .menu-box-show-icon > span:last-child {
-            transform:rotate(-45deg);
-            position: absolute;
-            top: 30px;
-        }
-
-        header .navbar nav#top-navbar {
-            background-color: #f8f8f8;
-            bottom: 0;
-            left: 100%;
-            overflow: hidden;
-            padding: 0 15px 48px;
-            position: fixed;
-            top: 66px;
-            -webkit-transition: all .5s;
-            transition: all .5s;
-            width: 100%;
-        }
-
-        header .navbar nav#top-navbar .navbar-nav li.menu-list a.btn-next {
-            border-bottom: 1px solid #d4d4d4;
-            font-weight: 500;
-            padding: 15px 0;
-        }
-
-        header .navbar nav#top-navbar .navbar-nav li.menu-list {
-            margin: 0 15px;
-        }
-
-        header .navbar nav#top-navbar .navbar-nav li.menu-list a.btn-next .icon-arrow-right {
-            float: right;
-            font-size: 20px;
-        }
-
-        header .navbar nav#top-navbar.in {
-            left: 0;
-        }
-    }
-
-    @media (min-width: 1051px) {
-        html, body, header, footer {
-            font-size: 18px;
-        }
-        header .container {
-            width: 93.705%;
-        }
-
-        .header {
-            min-height: 78px;
-        }
-
-        header .navbar .navbar-header {
-            background-color: #fff;
-            background-image: url(../assets/img/bg-white.png) !important;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            /* box-shadow: 2px 0 10px rgba(0, 0, 0, .2); */
-            box-shadow: none;
-            height: 66px;
-            position: relative;
-            z-index: 10;
-            float: left;
-        }
-
-        header .navbar .navbar-header .logo {
-            width: 130px;
-            box-shadow: none;
-        }
-
-        header .navbar nav#top-navbar {
-            background-color: #fff;
-            height: inherit;
-            left: 0;
-            overflow: visible;
-            padding-bottom: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            -webkit-transition: all .3s;
-            transition: all .3s;
-        }
-        header .navbar nav#top-navbar .navbar-nav li.menu-list a.top-navbar-text {
-            background-color: transparent !important;
-            border: none;
-            box-sizing: border-box;
-            font-size: .9em;
-            height: 78px;
-            line-height: 78px;
-            padding: 0;
-            font-weight: 700;
-        }
-        header .navbar nav#top-navbar .navbar-nav {
-            display: flex;
-            height: 100%;
-            justify-content: center;
-            padding-top: 0;
-            text-align: center;
-            width: 100%;
-        }
-
-        header .navbar ul.nav>li>a:after {
-            content: "\e7b2";
-            font-family: iconfont !important;
-            font-size: 16px;
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-48%);
-            visibility: hidden;
-        }
-
-        header .navbar nav#top-navbar .navbar-nav li.menu-list {
-            display: inline-block;
-            margin: 0;
-            padding: 0 1.5%;
-        }
-
-        header .navbar nav#top-navbar .navbar-nav li.menu-list a.top-navbar-text {
-            background-color: transparent !important;
-            border: none;
-            box-sizing: border-box;
-            font-size: 1em;
-            height: 78px;
-            line-height: 78px;
-            padding: 0;
-        }
-
-        .header-mobile-menu {
-            display: none;
-        }
-    }
-    
-</style>

@@ -64,20 +64,20 @@
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-1">
                     
                     <li>
-                        <a href="#" target="_self" >
-                            新闻
+                        <a href="https://tv.cctv.com/cctv2" target="_blank" >
+                            财经新闻
                         </a>
                     </li>
                     
                     <li>
-                        <a href="#" target="_self" >
-                            展会活动
+                        <a href="https://www.globaltimes.cn" target="_blank" >
+                            Global Times
                         </a>
                     </li>
                     
                     <li>
-                        <a href="#" target="_self" >
-                            多媒体
+                        <a href="https://www.stcn.com" target="_blank" >
+                            证券时报
                         </a>
                     </li>
                     
@@ -256,105 +256,3 @@
     </div>
     </footer>
 </template>
-
-
-<style scoped>
-    footer {
-        background-color: #f2f2f2;
-        overflow: hidden;
-        padding-top: 20px;
-        text-align: left;
-        min-height: 500px;
-    }
-
-    footer .footer-nav ul li {
-        border-bottom: 1px solid #d4d4d4;
-        padding: 10px 0;
-    }
-
-    footer .footer-nav h3 {
-        border-bottom: 1px solid #d4d4d4;
-        font-size: 1.125em;
-        padding: 10px 5px;
-    }
-
-    .container-custom {
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    footer .footer-other-link ul {
-        text-align: center;
-    }
-
-    footer .footer-other-link ul li {
-        display: inline-block;
-        margin: 5px 8px;
-        text-align: center;
-    }
-
-    .share-box li {
-        display: inline-block;
-        margin: 0 8px;
-        vertical-align: middle;
-    }
-
-    [class*=" hwic_"], [class^=hwic_] {
-        speak: none;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-family: corpfont !important;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: 400;
-        line-height: 1;
-        text-transform: none;
-    }
-
-    @media (max-width: 1050px) {
-        footer .list-unstyled li {
-            margin: 8px !important;
-        }
-    }
-
-    @media (min-width:1051px) {
-        .container-custom {
-            max-width: 1430px;
-            width: 85.652%;
-        }
-        .col-md-2 {
-            width: 16.66666667%;
-        }
-
-        footer .footer-nav {
-            border-bottom: 1px solid #e2e2e2;
-            margin-bottom: 38px;
-            padding: 48px 0 34px;
-        }
-        footer .footer-nav .col-md-2 {
-            width: 20%;
-        }
-
-        footer .footer-nav ul li {
-            border: none;
-            margin-bottom: 15px;
-            padding: 0;
-        }
-
-        footer .footer-nav h3 {
-            border: none;
-            font-size: .9375em;
-            line-height: 25px;
-            margin: 0 0 18px;
-            padding: 0;
-        }
-
-        footer .share-box {
-            float: right;
-        }
-
-    }
-
-</style>
