@@ -7,6 +7,7 @@
                         <!-- logo left -->
                         <NuxtLink to="/" target="_self" class="logo navbar-brand">
                             <svg class="text-highlighted block w-auto h-6" style="width: 130px; height: 100%;" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M168 200H279C282.542 200 285.932 198.756 289 197C292.068 195.244 295.23 193.041 297 190C298.77 186.959 300.002 183.51 300 179.999C299.998 176.488 298.773 173.04 297 170.001L222 41C220.23 37.96 218.067 35.7552 215 34C211.933 32.2448 207.542 31 204 31C200.458 31 197.067 32.2448 194 34C190.933 35.7552 188.77 37.96 187 41L168 74L130 9.99764C128.228 6.95784 126.068 3.75491 123 2C119.932 0.245087 116.542 0 113 0C109.458 0 106.068 0.245087 103 2C99.9323 3.75491 96.7717 6.95784 95 9.99764L2 170.001C0.226979 173.04 0.00154312 176.488 1.90993e-06 179.999C-0.0015393 183.51 0.229648 186.959 2 190C3.77035 193.04 6.93245 195.244 10 197C13.0675 198.756 16.4578 200 20 200H90C117.737 200 137.925 187.558 152 164L186 105L204 74L259 168H186L168 200ZM89 168H40L113 42L150 105L125.491 147.725C116.144 163.01 105.488 168 89 168Z" fill="#00DC82"></path></svg>
+                            <span class="logo-txt">馨馨数据</span>
                         </NuxtLink>
                         <!-- 移动端菜单 -->
                         <div class="header-mobile-menu" @click="handleMobileClick">
@@ -20,7 +21,7 @@
                     <nav id="top-navbar" class="">
                         <ul class="nav navbar-nav list-unstyled">
                             <li class="menu-list hover-open" @click="handerHeaderShowClick">
-                                <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
+                                <a href="javascript:void(0);" class="btn-next collapsed top-navbar-text">
                                     社融数据
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
@@ -39,7 +40,7 @@
                                                         <div class="new-font-box">
                                                             <ul class="row">
                                                                 <li class="col-md-3 col-sm-3 col-xs-4">
-                                                                    <a href="https://xinxinji.cn" target="_blank" class="" rel="noopener">
+                                                                    <a href="https://xinxinji.cn" target="_self" class="" rel="noopener">
                                                                         <span class="menu-icon icon-website"></span>
                                                                         <p>1.0旧版本</p>
                                                                     </a>
@@ -66,6 +67,13 @@
                                                                         <p>可视化大屏</p>
                                                                     </a>
                                                                 </li>
+
+                                                                <li class="col-md-3 col-sm-3 col-xs-4">
+                                                                    <a href="https://www.sse.com.cn/market/bonddata/statistic/" target="_blank" class="" rel="noopener">
+                                                                        <span class="menu-icon icon-coin"></span>
+                                                                        <p>融资总额</p>
+                                                                    </a>
+                                                                </li>
                                                                 
                                                                 <li class="col-md-3 col-sm-3 col-xs-4">
                                                                     <a href="https://www.cs.ecitic.com" target="_blank" class="" rel="noopener">
@@ -81,14 +89,7 @@
                                                                         <p>华泰证券</p>
                                                                     </a>
                                                                 </li>
-                                                                
-                                                                <li class="col-md-3 col-sm-3 col-xs-4">
-                                                                    <a href="https://www.gf.com.cn" target="_blank" class="" rel="noopener">
-                                                                        <span class="menu-icon icon-website"></span>
-                                                                        <p>广发证券</p>
-                                                                    </a>
-                                                                </li>
-                                                                
+                                                               
                                                                 <li class="col-md-3 col-sm-3 col-xs-4">
                                                                     <a href="https://www.cicc.com" target="_blank" class="" rel="noopener">
                                                                         <span class="menu-icon icon-website"></span>
@@ -371,6 +372,9 @@
                 headerMenuHeight: "490px"
             }
         },
+        watch: {
+                
+        },
         mounted () {
             let self = this;
             self.clientWidth = document.body.clientWidth;
@@ -381,8 +385,8 @@
                 }
             }
         },
-        watch: {
-                
+        unmounted () {
+            //TODO ...
         },
         methods: {
             handleMobileClick : function(event :any) {
@@ -425,7 +429,6 @@
                     menuElments[i].classList.remove('active');
                 };
                 element.parentNode.classList.add('active');
-                console.log(element);
                
                 let siblings = Array.from(element.children); //将兄弟节点转换为数组
                 // getAttribute('')

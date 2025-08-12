@@ -1,7 +1,10 @@
 
+import path from "path";
 import { baseURL } from "process";
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: '2025-05-15',
@@ -9,9 +12,13 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n'
   ],
+  plugins: [
+    
+  ],
   css:[
     '~/css/style.css',
-    '~/assets/fonts/iconfont.css'
+    '~/assets/fonts/iconfont.css',
+    '@vuemap/vue-amap/dist/style.css'
   ],
   app: {
     baseURL:'/v2',
@@ -19,12 +26,12 @@ export default defineNuxtConfig({
     head: {
       title: '数据分析',
       htmlAttrs: {
-        lang: 'en',
+        lang: 'zh',
       },
       meta:[
         {charset: 'utf-8' },
         {content: "IE=edge,chrome=1", "http-equiv": "X-UA-Compatible"},
-        { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
+        {name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0' },
         {name:'description', content:'软件开发,数据分析,金融分析'},
         {name:"keyword", content:"金融,金融分析,数据分析,软件开发,计算机软件"},
       ],
@@ -44,6 +51,17 @@ export default defineNuxtConfig({
       fallbackLocale: 'zh'
     }
   },
+  router: {
+    options: {
+      
+    }
+  },
+  routeRules: {
+    '/': {prerender: true},
+    '/api/**': {cors: true},
+    // '/old-page': {redirect:'new-page'},
+    '/admin/**': {ssr:false}
+  },
   runtimeConfig: {
     "server": false,
     "client": true,
@@ -53,7 +71,7 @@ export default defineNuxtConfig({
     apiSecret: '123',
     // Keys within public are also exposed client-side
     public: {
-      apiBase: '/api'
+      apiBase: '/'
     }
   },
   devServer: {
@@ -61,8 +79,24 @@ export default defineNuxtConfig({
     port:3050,
     url:'http://127.0.0.1:3050'
   },
+  nitro: {
+    devProxy: {
+      '/stock': {
+        target: "https://xinxinji.cn/stock",
+        changeOrigin: true,
+      }
+    },
+    // 服务端请求代理规则
+    routeRules: {
+      "/stock/**": {
+        proxy: "https://xinxinji.cn/stock",
+      }
+    }
+  },
   vite: {
-    plugins:[],
+    plugins:[
+      visualizer(),
+    ],
     css: {
       preprocessorOptions: {
         scss: {
@@ -70,10 +104,36 @@ export default defineNuxtConfig({
         }
       }
     },
+    optimizeDeps: {
+      exclude: ['@vuemap/vue-amap']
+    },
+    server: {
+      // proxy: {
+      //   "/stock/": {
+      //     target: "https://xinxinji.cn/stock/",
+      //     changeOrigin: true,
+      //     rewrite: path => path.replace(/^\/api\//, '')
+      //   }
+      // }
+    },
     build: {
+      cssCodeSplit: true, // 开启CSS
+      sourcemap: false,
+      rollupOptions: { 
+        output: {
+          manualChunks: (id: any) => {
+            //console.log(id)
+            if (id.includes('.scss')) {
+              return 'style';
+            }
+            id.includes('node_modules') ? 'vendor' : null 
+          }
+        }
+      },
       target: ['es2015', 'chrome52'],
     }
   },
+
   build: {
     // babel: {
     //   presets: [
@@ -90,5 +150,6 @@ export default defineNuxtConfig({
     //     ]
     //   ]
     // }
+    analyze:true
   }
 })

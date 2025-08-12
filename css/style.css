@@ -45,6 +45,10 @@ a, a:focus, a:hover {
     text-decoration: none;
 }
 
+img, svg {
+    vertical-align: middle;
+}
+
 p {
     color: #666;
     font-size: 1em;
@@ -226,8 +230,8 @@ header .navbar nav#top-navbar .header-content-n1 ul li a {
 .project-service {
     width: 100%;
     float: left;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .project-service .container {
@@ -239,7 +243,7 @@ header .navbar nav#top-navbar .header-content-n1 ul li a {
 .project-service .title {
     width: 100%;
     float: left;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .project-service .title-name {
@@ -304,6 +308,11 @@ footer .footer-nav h3 {
     border-bottom: 1px solid #d4d4d4;
     font-size: 1.125em;
     padding: 10px 5px;
+}
+
+footer .navbar-collapse {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 footer .footer-nav ul li {
@@ -459,6 +468,15 @@ footer .footer-other-link ul li {
         display: none !important;
     }
 
+    .logo-txt { 
+        display: none;
+    }
+
+    .project-service {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     .project-service .container {
         width: 100%;
         padding: 0px 0rem;
@@ -512,6 +530,12 @@ footer .footer-other-link ul li {
 
     footer .list-unstyled li {
         margin: 8px !important;
+    }
+}
+
+@media (max-width:1440px) {
+    .project-service .container {
+        width: 100%;
     }
 }
 
@@ -752,8 +776,16 @@ footer .footer-other-link ul li {
     }
 
     header .navbar .navbar-header .logo {
-        width: 130px;
+        width: 180px;
         box-shadow: none;
+    }
+
+    .logo-txt {
+        position: absolute;
+        font-weight: bold;
+        font-size: 25px;
+        right: -20px;
+        top: 28%;
     }
 
     header .navbar nav#top-navbar {

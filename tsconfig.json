@@ -1,8 +1,10 @@
 {
   "extends": "./.nuxt/tsconfig.json",
-  "files": [],
+  //"files": ["node_modules/@vuemap/amap-jsapi-types/index.d.ts"],
   "references": [],
   "compilerOptions": {
-    "module": "ESNext"
-  }
+    "module": "ESNext",
+    //"types": ["@vuemap/amap-jsapi-types"]
+  },
+  "globals": { "AMap": "true" }
 }

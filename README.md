@@ -151,4 +151,11 @@ This directory contains your Vuex store files. Creating a file in this directory
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
 
+
+### plugins
+Nuxt Amap  support
+
+https://vue-amap.guyixi.cn/zh-cn/introduction/ssr.html
+
+
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
