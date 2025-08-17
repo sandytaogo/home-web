@@ -438,6 +438,7 @@
                 ); // 查找所有具有特定类的兄弟节点
                 
                 if (specificSiblings.length > 0) {
+                    //mobile animation implement
                     if (this.clientWidth < 1051) {
                         let element = specificSiblings[0];
                         if (element && element.classList.contains('in')) {
@@ -445,6 +446,7 @@
                         } else if (element && element.classList) {
                             element.classList.add('in');
                         }
+                    // computer animation implement
                     } else if (specificSiblings[0].style.display == 'block') {
                         specificSiblings[0].style.height = this.headerMenuHeight;
                         //连续操作属性不能保证立即渲染，让浏览器强制渲染实现过度效果.
@@ -456,19 +458,18 @@
                             specificSiblings[0].style.height = '';
                         }, 500);
                     } else {
-                        
                         let elementShows = document.querySelectorAll('.nav-open.menu-fixed-right.header-content-n1');
                         elementShows.forEach((element: any) => {
                             element.style.display = "none";
                         });
+                        document.body.clientWidth;
                         specificSiblings[0].style.display = "block";
+                        let { height } = specificSiblings[0].getBoundingClientRect();
+                        this.headerMenuHeight = height;
                         specificSiblings[0].style.height = '0px';
                         //连续操作属性不能保证立即渲染，读取属性让浏览器强制渲染实现过度效果.
                         document.body.clientWidth;
-                        specificSiblings[0].style.height = this.headerMenuHeight;
-                        setTimeout(() => {
-                            specificSiblings[0].style.height = '';
-                        }, 500);
+                        specificSiblings[0].style.height = this.headerMenuHeight + "px";
                     }
                 }
             },
