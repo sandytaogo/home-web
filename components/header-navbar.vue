@@ -325,6 +325,10 @@
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                             </li>
+
+                            <li class="menu-list hover-open">
+                                <NuxtLink class="btn-next collapsed top-navbar-text" to="about" target="_self">关于</NuxtLink>
+                            </li>
                         </ul>
                     </nav>
                 
