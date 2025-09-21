@@ -27,7 +27,7 @@
                                 </a>
                                 <div class="nav-open menu-fixed-right header-content-n1" data-mod-name="child-component" data-mod-id="tabs[0]">
                                     <a href="javascript:;" @click="handerCloseChildMenuClick" class="btn-nav-back hidden-md hidden-lg">
-                                        <span class="iconfont icon-arrow-lift"></span>
+                                        <span @click="handerCloseChildMenuClick" class="iconfont icon-arrow-lift"></span>
                                         返回主菜单
                                     </a>
                                     <div class="nav-ani ">
