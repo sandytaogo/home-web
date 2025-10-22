@@ -158,7 +158,7 @@
     
     setInterval(async () => {
      queryFinance();
-    }, 5000);
+    }, 3000);
 
     window.onresize = debounce(function() {	
       risk.resize = {width: document.body.clientWidth, height: document.body.clientHeight};
