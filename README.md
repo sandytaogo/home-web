@@ -2,10 +2,10 @@
 
     官网设计采用兼容PC, MOBILE 设备显示 vue nuxt框架 进行工程化构建
 
-##   Overview
+## Overview
 
-    As the Web rapidly evolves, Web users too are evolving with it. 
-    In an era of social connectedness, people are becoming increasingly enthusiastic about interacting,  sharing,  and  collaborating  through  social  networks,  online communities, blogs, Wikis, and other online collaborative media. 
+As the Web rapidly evolves, Web users too are evolving with it. 
+In an era of social connectedness, people are becoming increasingly enthusiastic about interacting,  sharing,  and  collaborating  through  social  networks,  online communities, blogs, Wikis, and other online collaborative media. 
     In recent years, this collective intelligence has spread to many different areas, with particular focus on elds related to everyday life such as commerce, tour-ism,  education, and  health, causing the  size  of the social Web to expand exponentially. 
     The distillation of knowledge from such a large amount of unstructured  information, however, is an  extremely  difcult  task, as  the contents  of  today’s  Web  are  perfectly  suitable  for  human  consumption, but remain hardly accessible  to machines. 
     Big social data analysis grows out of this need and  it includes disciplines  such as social network analy-sis, multimedia management, social media analytics, trend discovery, and opinion mining.  
