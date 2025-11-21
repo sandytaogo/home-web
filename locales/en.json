@@ -1,5 +1,24 @@
 {
   "demo": {
-    "test": "Test"
+    "test": "Testaa"
+  },
+  "navbar": {
+    "menu": {
+      "financeData": {"name": "FinanceData"},
+      "instance": {"name": "OnlineInstance"},
+      "document": {"name": "Document"},
+      "sourceCode": {"name": "SourceCode"},
+      "provider": {"name": "Cloud Providers"},
+      "about": {"name": "About"}
+    }
+  },
+
+
+
+  "footer": {
+    "menu": {
+      "discoverData": "Discover Data",
+      "about": "Data About"
+    }
   }
 }

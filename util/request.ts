@@ -6,7 +6,7 @@ import.meta.client
 type Methods = "GET" | "POST" | "DELETE" | "PUT";
 
 // URL 基地址
-const BASE_URL = "/stock";
+const BASE_URL = process.env.STOCK_API;
 
 // 请求结果数据格式
 export interface IResultData<T> {
@@ -35,7 +35,9 @@ class HttpRequest {
             if (token.value) {
                 newOptions.headers = { Authorization: `Bearer ${token.value}`};
             }
-
+            if (newOptions.timeout == undefined) {
+                newOptions.timeout = 5000;
+            }
             // 根据请求方法处理请求的数据
             if (method === "GET" || method === "DELETE") {
                 // 将数据设置为newOptions的params属性

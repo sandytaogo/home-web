@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: process.env.NODE_ENV == "development" || false },
   modules: [
+    'nuxt-proxy',
     '@nuxtjs/i18n'
   ],
   plugins: [
@@ -41,14 +42,17 @@ export default defineNuxtConfig({
     }
   },
   i18n: {
-    lazy: true,
-    locales: ['en', 'zh'], // 配置语种
+    lazy: false,
+    locales: [
+      {code: 'en', iso: 'en-US', name: 'English'},
+      {code: 'zh', iso: 'zh-CN', name: '中文'}
+    ], // 配置语种
     defaultLocale: 'zh', // 默认语种
-    strategy: 'no_prefix',
+    strategy: 'no_prefix',  // 所有语言共用同一路径，不加前缀
     vueI18n: '../i18n.config.ts', // 通过vueI18n配置
     detectBrowserLanguage: {
       useCookie: true,
-      fallbackLocale: 'zh'
+      //fallbackLocale: 'zh-CN'
     }
   },
   router: {
@@ -82,14 +86,14 @@ export default defineNuxtConfig({
   nitro: {
     devProxy: {
       '/stock': {
-        target: "https://xinxinji.cn/stock",
+        target: process.env.STOCK_API,  
         changeOrigin: true,
       }
     },
     // 服务端请求代理规则
     routeRules: {
       "/stock/**": {
-        proxy: "https://xinxinji.cn/stock",
+        proxy: process.env.STOCK_API,
       }
     }
   },
@@ -108,13 +112,13 @@ export default defineNuxtConfig({
       exclude: ['@vuemap/vue-amap']
     },
     server: {
-      // proxy: {
-      //   "/stock/": {
-      //     target: "https://xinxinji.cn/stock/",
-      //     changeOrigin: true,
-      //     rewrite: path => path.replace(/^\/api\//, '')
-      //   }
-      // }
+      proxy: {
+        "/stock/**": {
+          target: "https://xinxinji.cn",
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/stock\//, '')
+        }
+      }
     },
     build: {
       cssCodeSplit: true, // 开启CSS

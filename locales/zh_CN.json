@@ -1,5 +1,26 @@
 {
   "demo": {
     "test": "测试"
+  },
+    "navbar": {
+    "menu": {
+      "financeData": {"name": "社融数据"},
+      "instance": {"name": "在线实例"},
+      "document": {"name": "在线文档"},
+      "sourceCode": {"name": "源码地址"},
+      "provider": {"name": "云服务提供商"},
+      "about": {"name": "关于"}
+    }
+  },
+  
+
+  
+ "footer": {
+    "menu": {
+      "discoverData": "发现数据",
+      "about": "关于数据"
+    }
   }
 }
+
+

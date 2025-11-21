@@ -1,3 +1,20 @@
+<script setup lang="ts">
+    //import Vue from 'vue';
+    const { locale, setLocale, locales, t } = useI18n();
+    // Vue.prototype.$globalsetLocale = function (param: any) {
+    //     console.log('这是一个全局方法', param);
+    // };
+    const switchLocalePath = useSwitchLocalePath()
+    onMounted(() => {
+          // 监听自定义事件
+        window.addEventListener('my-event', function(event: any) {
+            setLocale(event.detail.value);
+        });
+    });
+    const availableLocales = computed(() => {
+        return locales.value.filter(i => i.code !== locale.value)
+    })
+</script>
 <template>
     <div class="header">
         <header class="affix">
@@ -22,7 +39,7 @@
                         <ul class="nav navbar-nav list-unstyled">
                             <li class="menu-list hover-open" @click="handerHeaderShowClick">
                                 <a href="javascript:void(0);" class="btn-next collapsed top-navbar-text">
-                                    社融数据
+                                    {{t('navbar.menu.financeData.name')}}
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                                 <div class="nav-open menu-fixed-right header-content-n1" data-mod-name="child-component" data-mod-id="tabs[0]">
@@ -149,7 +166,7 @@
 
                             <li class="menu-list hover-open" @click="handerHeaderShowClick" >
                                 <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
-                                    在线实例
+                                    {{t('navbar.menu.instance.name')}}
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                                 <div class="nav-open menu-fixed-right header-content-n1" data-mod-name="child-component" data-mod-id="tabs[3]">
@@ -307,34 +324,33 @@
 
                             <li class="menu-list hover-open">
                                 <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
-                                    源码地址
+                                    {{t('navbar.menu.sourceCode.name')}}
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                             </li>
 
                             <li class="menu-list hover-open">
                                 <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
-                                    在线文档
+                                    {{t('navbar.menu.document.name')}}
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                             </li>
 
                             <li class="menu-list hover-open">
                                 <a href="javascript:;" target="" class="btn-next collapsed top-navbar-text">
-                                    云服务提供商
+                                    {{t('navbar.menu.provider.name')}}
                                     <span class="iconfont icon-arrow-right hidden-md hidden-lg"></span>
                                 </a>
                             </li>
 
                             <li class="menu-list hover-open">
-                                <NuxtLink class="btn-next collapsed top-navbar-text" to="about" target="_self">关于</NuxtLink>
+                                <NuxtLink class="btn-next collapsed top-navbar-text" to="about" target="_self">{{t('navbar.menu.about.name')}}</NuxtLink>
                             </li>
                         </ul>
                     </nav>
                 
                     <!-- 右侧导航 -->
                     <div class="nav-right">
-                        
                         <div class="btn-shop hidden-xs hidden-sm">
                             <a href="javascript:;" class="shop-icon js-shop-btn-open">
                                 <span class="iconfont icon-bags"></span>
@@ -343,20 +359,27 @@
                                 <div class="closes"><a href="javascript:;" class="btn-close js-shop-btn-close" ><span class="hwic_cross"></span></a></div>
                                 <ul class="shop-nav">
                                     <!-- fix -->
-                                    <li style="padding-right: 40px;" class=" hidden-xs hidden-sm">
+                                    <li style="padding-right: 20px;" class=" hidden-xs hidden-sm">
                                         <a href="#"><span class="huawei-iconfont iconHUAWEIShopping3"></span>商城</a>
                                     </li>
                                     <!-- fix -->
-                                    <li style="padding-right: 40px;" class=" hidden-md hidden-lg">
+                                    <li style="padding-right: 20px;" class=" hidden-md hidden-lg">
                                         <a href="#"><span class="huawei-iconfont iconHUAWEIShopping3"></span>商城</a>
                                     </li>
                                     <!-- fix -->
-                                    <li style="padding-right: 40px;" class="">
+                                    <li style="padding-right: 20px;" class="">
                                         <a href="#"  target="_blank" rel="noopener"><span class="huawei-iconfont iconHUAWEIShopping3"></span>云</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                        <a href="javascript:;" data-target="#header-search" class="btn-open-search">
+                            <span class="iconfont icon-search"></span>
+                        </a>
+                        <select v-model="selectLangageValue" @change="handleLangageChange">
+                             <option value="en">英文</option>
+                             <option value="zh">中文</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -365,15 +388,17 @@
 </template>
 
 <script lang="ts">
-
     import { defineComponent, ref, toRefs, nextTick, watch } from 'vue'
-
     const header_navbar = defineComponent({
         name: 'header_component',
+        setup(props) {
+            console.log("setup:" + props)
+        },
         data () {
             return {
                 clientWidth: 0,
-                headerMenuHeight: "490px"
+                headerMenuHeight: "490px",
+                selectLangageValue: "zh"
             }
         },
         watch: {
@@ -393,6 +418,19 @@
             //TODO ...
         },
         methods: {
+            handleLangageChange : function (e: any) {
+                console.log('选中的值:', e.target.value);
+                // if (this.$globalsetLocale) {
+                //     this.$globalsetLocale(e.target.value);
+                // }
+                // 派发一个自定义事件
+                const event = new CustomEvent('my-event', {
+                detail: { key: 'value', value: e.target.value}, // 传递数据
+                bubbles: true, // 是否冒泡
+                cancelable: true // 是否可取消
+                });
+                window.dispatchEvent(event);
+            },
             handleMobileClick : function(event :any) {
                 try {
                     let element = document.querySelector('.header-mobile-menu');
@@ -509,7 +547,6 @@
             }
         }
     })
-
     export default header_navbar;
 
 </script>

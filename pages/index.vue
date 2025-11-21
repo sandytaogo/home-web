@@ -122,6 +122,7 @@
   import {initMapApi} from "~/util/amap/load";
   import httpRequest from '~/util/request';
   import { debounce } from '~/util/utils';
+  const { t } = useI18n()
 
   definePageMeta({
     prefetch: false, // 禁用此页面的预取

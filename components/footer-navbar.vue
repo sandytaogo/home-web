@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+    const { locale, setLocale, locales, t } = useI18n();
+</script>
 <template>
     <footer>
         <div class="container-custom">
@@ -6,7 +9,7 @@
             
             <div data-mod-name="child-component" data-mod-id="navs[0]" class="col-md-2">
                 <h3 class="collapsed" data-toggle="collapse" data-target="#footer-list-0" aria-controls="footer-list-0" aria-expanded="false">
-                    关于数据
+                    {{t('footer.menu.about')}}
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-0">
@@ -86,7 +89,7 @@
             
             <div data-mod-name="child-component" data-mod-id="navs[2]" class="col-md-2">
                 <h3 class="collapsed" data-toggle="collapse" data-target="#footer-list-2" aria-controls="footer-list-2" aria-expanded="false">
-                    发现数据
+                    {{ t('footer.menu.discoverData') }}
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-2">

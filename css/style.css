@@ -134,6 +134,26 @@ header .navbar nav#top-navbar .nav-open {
     visibility: visible;
 }
 
+header .navbar .nav-right {
+    border: none;
+    float: right;
+    font-size: .9375em;
+    margin-right: -8px;
+    margin-top: 19px;
+    position: relative;
+    right: 0;
+    top: 0;
+}
+
+header .navbar .nav-right {
+    height: 40px;
+    padding-right: 15px;
+    position: absolute;
+    right: 70px;
+    top: 13px;
+    z-index: 20;
+}
+
 .col-xs-4 {
     width: 33.33333333%;
 }
@@ -202,10 +222,6 @@ header.affix {
     position: fixed;
     top: 0;
     transition: transform .5s;
-}
-
-header .nav-right {
-    display: none;
 }
 
 header .navbar nav#top-navbar .header-content-n1 .new-font-box ul li a {
@@ -349,6 +365,19 @@ footer .footer-other-link ul li {
     vertical-align: middle;
 }
 
+header .navbar .nav-right a.btn-open-search {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 0px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+header .navbar .nav-right .btn-shop .closes {
+    display: none;
+}
+
 [class*=" hwic_"], [class^=hwic_] {
     speak: none;
     -webkit-font-smoothing: antialiased;
@@ -359,6 +388,12 @@ footer .footer-other-link ul li {
     font-weight: 400;
     line-height: 1;
     text-transform: none;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display:none!important
+    }
 }
 
 @media (max-width: 1050px) {
@@ -582,6 +617,31 @@ footer .footer-other-link ul li {
         left: 0;
         position: absolute;
         width: 100%;
+    }
+
+    header .navbar .nav-right .btn-shop .navsbox {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 100% center;
+        -ms-transform-origin: 100% center;
+        transform-origin: 100% center;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        visibility: hidden;
+    }
+
+    header .navbar .nav-right .btn-shop {
+        cursor: pointer;
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        margin-right: 0px;
+        margin-top: 0px;
+        position: relative;
+        -webkit-transition: all .5s;
+        transition: all .5s;
     }
 }
 

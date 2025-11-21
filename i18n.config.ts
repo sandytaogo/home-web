@@ -1,13 +1,12 @@
 import en from './locales/en.json'
-import zh from './locales/zh_CN.json'
+import zh_CN from './locales/zh_CN.json'
 
-export default defineI18nConfig(() => {
-  return {
-    legacy: false, // 是否兼容之前
-    fallbackLocale: 'zh',
+export default {
+    legacy: true, // 是否兼容之前
+    locale: 'zh',
+    fallbackLocale: 'en',
     messages: {
-      en,
-      zh,
+      zh: zh_CN,
+      en: en
     }
-  }
-})
+}
