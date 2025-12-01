@@ -95,6 +95,15 @@ export default defineNuxtConfig({
       "/stock/**": {
         proxy: process.env.STOCK_API,
       }
+    },
+    output: {
+      // 静态站点生成（SSG）时，页面输出到 dist 目录，每个页面一个 HTML 文件
+      dir: '.output/public',
+      publicDir: '.output/public',
+    },
+    // 静态生成：每个路由生成独立 HTML 文件（nuxt generate 时生效）
+    prerender: {
+      autoSubfolderIndex: true, // 生成 /about/index.html 而非 /about.html
     }
   },
   vite: {
@@ -125,6 +134,10 @@ export default defineNuxtConfig({
       sourcemap: false,
       rollupOptions: { 
         output: {
+          // 自定义 chunk 命名规则，清晰区分页面
+          // chunkFileNames: '.output/public/js/[name].[hash].js',
+          // entryFileNames: '.output/public/js/[name].[hash].js',
+          // assetFileNames: '.output/public/[ext]/[name].[hash].[ext]',
           manualChunks: (id: any) => {
             //console.log(id)
             if (id.includes('.scss')) {
@@ -137,7 +150,10 @@ export default defineNuxtConfig({
       target: ['es2015', 'chrome52'],
     }
   },
-
+  // 4. 关闭实验性的 chunk 优化（如需）
+  experimental: {
+    //inlineSSRStyles: false, // 禁用 SSR 样式内联
+  },
   build: {
     // babel: {
     //   presets: [

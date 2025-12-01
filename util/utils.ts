@@ -94,6 +94,45 @@ export function deepClone<T>(obj: T, hash: WeakMap<object, any> = new WeakMap())
 }
 
 /**
+ * run task.
+ * @param task function.
+ */
+export function runTask(task: any) {
+    return new Promise((resolve) => {
+        _runTask(task, resolve);
+    });
+}
+
+function _runTask(task: any, callback: any) {
+    const start = Date.now();
+    requestAnimationFrame(()=> {
+        if(Date.now() - start < 16.6) {
+            task();
+            callback();
+        } else {
+            _runTask(task, callback);
+        }
+    })
+}
+
+/**
+ * 判断是否是稀疏数组.
+ * @param arr {Array} aar
+ * @returns boolean.
+ */
+export function isSparseArray(arr: any) {
+    if (!Array.isArray(arr)) {
+        return false;
+    }
+    for (let i = 0; arr.length; i++) {
+        if ( !(i in arr)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * 手机号正则校验
  * @param phone 手机号
  * @param phoneReg 正则字符串

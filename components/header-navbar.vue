@@ -59,7 +59,7 @@
                                                                 <li class="col-md-3 col-sm-3 col-xs-4">
                                                                     <a href="https://xinxinji.cn" target="_self" class="" rel="noopener">
                                                                         <span class="menu-icon icon-website"></span>
-                                                                        <p>1.0旧版本</p>
+                                                                        <p>{{t('navbar.menu.financeData.1version')}}</p>
                                                                     </a>
                                                                 </li>
                                                                 
@@ -81,7 +81,7 @@
                                                                     <a href="https://xinxinji.cn/finance/index.html" target="_blank" class="" rel="noopener">
                                                                         
                                                                         <span class="menu-icon icon-pic"></span>
-                                                                        <p>可视化大屏</p>
+                                                                        <p>{{t('navbar.menu.visualizationDashboard')}}</p>
                                                                     </a>
                                                                 </li>
 
@@ -120,7 +120,12 @@
                                                                         <p>招商证券</p>
                                                                     </a>
                                                                 </li>
-
+                                                                <li class="col-md-3 col-sm-3 col-xs-4">
+                                                                    <NuxtLink to="platedistribution" target="_self" class="" rel="noopener">
+                                                                        <span class="menu-icon icon-website"></span>
+                                                                        <p>板块热力图</p>
+                                                                    </NuxtLink>
+                                                                </li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -182,7 +187,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 header-content-n1">
                                                         <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-130" aria-controls="header-list-130" aria-expanded="true">
-                                                            菜单列表<span class="iconfont icon-arrow-down"></span>
+                                                            {{t('navbar.menu.menuList')}}<span class="iconfont icon-arrow-down"></span>
                                                             <div class="line"></div>
                                                         </h3>
                                                         
@@ -227,7 +232,7 @@
                                                     
                                                     <div class="col-md-4">
                                                         <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-131" aria-controls="header-list-131" aria-expanded="true">
-                                                            服务监控<span class="iconfont icon-arrow-down"></span>
+                                                            {{t('navbar.menu.serviceMonitor')}}<span class="iconfont icon-arrow-down"></span>
                                                             <div class="line"></div>
                                                         </h3>
                                                         <div class="row collapse navbar-collapse " id="header-list-131">
@@ -270,7 +275,7 @@
                                                     
                                                     <div class="col-md-4">
                                                         <h3 class="collapsed" data-toggle="collapse" data-target="#header-list-132" aria-controls="header-list-132" aria-expanded="true">
-                                                            AI辅助工具<span class="iconfont icon-arrow-down"></span>
+                                                            {{t('navbar.menu.aiAuxiliaryTool')}}<span class="iconfont icon-arrow-down"></span>
                                                             <div class="line"></div>
                                                         </h3>
                                                         
@@ -376,8 +381,8 @@
                         <a href="javascript:;" data-target="#header-search" class="btn-open-search">
                             <span class="iconfont icon-search"></span>
                         </a>
-                        <select v-model="selectLangageValue" @change="handleLangageChange">
-                             <option value="en">英文</option>
+                        <select class="langage-select" v-model="selectLangageValue" @change="handleLangageChange">
+                             <option value="en">English</option>
                              <option value="zh">中文</option>
                         </select>
                     </div>
@@ -389,6 +394,7 @@
 
 <script lang="ts">
     import { defineComponent, ref, toRefs, nextTick, watch } from 'vue'
+
     const header_navbar = defineComponent({
         name: 'header_component',
         setup(props) {
@@ -406,6 +412,8 @@
         },
         mounted () {
             let self = this;
+            const { locale, setLocale, locales, availableLocales } = useI18n();
+            this.selectLangageValue = locale.value;
             self.clientWidth = document.body.clientWidth;
             //监听屏幕宽度
             window.onresize = () => {

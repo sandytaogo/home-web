@@ -1,3 +1,20 @@
+/**
+ *css的14种布局技术
+ *1-块布局（Block Layout）
+ *2-内联布局（Inline Layout）
+ *3-表格布局（Table Layout）
+ *4-定位布局（Positioned Layout）
+ *5-浮动布局（Float Layout）
+ *6-弹性盒子布局（Flexible Box Layout）
+ *7-Grid布局（Grid Layout）
+ *8-多列布局（Multi-column Layout）
+ *9-层叠上下文（Stacking Contexts）
+ *10-响应式布局（Responsive Layout）
+ *11-固定定位（ Fixed Positioning ）
+ *12-粘性定位（Sticky Positioning）
+ *13-窗口单位（Viewport Units）
+ *14-文本布局（Text Layout）
+ */
 :root {
     --swiper-navigation-size: 44px;
     --swiper-theme-color: #007aff;
@@ -378,6 +395,12 @@ header .navbar .nav-right .btn-shop .closes {
     display: none;
 }
 
+header .langage-select {
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+}
+
 [class*=" hwic_"], [class^=hwic_] {
     speak: none;
     -webkit-font-smoothing: antialiased;
@@ -400,6 +423,10 @@ header .navbar .nav-right .btn-shop .closes {
 
     html {
         font-size: 14px;
+    }
+
+    header .langage-select {
+        display: none;
     }
 
     header .navbar nav#top-navbar .nav-open {

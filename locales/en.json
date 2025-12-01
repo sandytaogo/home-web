@@ -1,10 +1,11 @@
 {
-  "demo": {
-    "test": "Testaa"
-  },
   "navbar": {
     "menu": {
-      "financeData": {"name": "FinanceData"},
+      "financeData": {"name": "FinanceData", "1version":"1.0 Version"},
+      "visualizationDashboard": "Visualization Dashboard",
+      "menuList":"Menu List",
+      "serviceMonitor":"Service Monitor",
+      "aiAuxiliaryTool": "Auxiliary Tool",
       "instance": {"name": "OnlineInstance"},
       "document": {"name": "Document"},
       "sourceCode": {"name": "SourceCode"},
@@ -13,12 +14,24 @@
     }
   },
 
-
-
   "footer": {
     "menu": {
       "discoverData": "Discover Data",
-      "about": "Data About"
+      "about": "Data About",
+      "platformIntroduction":"Platform Introduction",
+      "recruitTalents": "Recruit talents",
+      "globalTimes": "Global Times",
+      "financeNews": "Finance News",
+      "securitiesTimes": "Securities Times",
+      "cloudService": "Cloud Service",
+      "newsAndCampaign": "News & Campaign",
+      "ourProducts":"Our Products",
+      "technologySupport": "Technology Support",
+      "supplier": "Supplier",
+      "more": "More",
+      "consumerTechnologySupport":"Consumer Support",
+      "cloudTechnologySupport": "Cloud Support",
+      "enterpriseTechnologySupport": "Enterprise Support"
     }
   }
 }

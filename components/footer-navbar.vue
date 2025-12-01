@@ -15,43 +15,25 @@
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-0">
                     
                     <li>
-                        <NuxtLink to="about" target="_self"> 平台简介</NuxtLink>
+                        <NuxtLink to="about" target="_self"> {{t('footer.menu.platformIntroduction')}}</NuxtLink>
                     </li>
-                    
+                
                     <li>
-                        <a href="#" target="_self" >
-                            可持续发展
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" target="_self" >
-                            信任中心
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" target="_self" >
-                            管理层信息
+                        <a href="#" target="_blank" rel="noopener">
+                            {{t('footer.menu.recruitTalents')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="#" target="_blank" rel="noopener">
-                            招贤纳士
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#" target="_blank" rel="noopener">
-                            供应商
+                            {{t('footer.menu.supplier')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="#" target="_self"  class="read-more">
                             <span>
-                                查看更多
+                                {{t('footer.menu.more')}}
                             </span><span class="iconfont icon-arrow-right"></span>
                         </a>
                     </li>
@@ -61,26 +43,26 @@
             
             <div data-mod-name="child-component" data-mod-id="navs[1]" class="col-md-2">
                 <h3 class="collapsed" data-toggle="collapse" data-target="#footer-list-1" aria-controls="footer-list-1" aria-expanded="false">
-                    新闻与活动
+                    {{t('footer.menu.newsAndCampaign')}}
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-1">
                     
                     <li>
                         <a href="https://tv.cctv.com/cctv2" target="_blank" >
-                            财经新闻
+                            {{t('footer.menu.financeNews')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="https://www.globaltimes.cn" target="_blank" >
-                            Global Times
+                            {{t('footer.menu.globalTimes')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="https://www.stcn.com" target="_blank" >
-                            证券时报
+                            {{t('footer.menu.securitiesTimes')}}
                         </a>
                     </li>
                     
@@ -107,7 +89,7 @@
                     </li>
                     
                     <li>
-                        <a href="#" target="" >
+                        <a href="https://www.nvidia.cn" target="_blank" >
                             探索智能世界
                         </a>
                     </li>
@@ -123,7 +105,7 @@
             
             <div data-mod-name="child-component" data-mod-id="navs[3]" class="col-md-2">
                 <h3 class="collapsed" data-toggle="collapse" data-target="#footer-list-3" aria-controls="footer-list-3" aria-expanded="false">
-                    我们的产品
+                    {{t('footer.menu.ourProducts')}}
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-3">
@@ -148,7 +130,7 @@
                     
                     <li>
                         <a href="#" target="_self" >
-                            云服务
+                         {{t('footer.menu.cloudService')}}
                         </a>
                     </li>
                     
@@ -157,26 +139,26 @@
             
             <div data-mod-name="child-component" data-mod-id="navs[4]" class="col-md-2">
                 <h3 class="collapsed" data-toggle="collapse" data-target="#footer-list-4" aria-controls="footer-list-4" aria-expanded="false">
-                    技术支持
+                    {{t('footer.menu.technologySupport')}}
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-4">
                     
                     <li>
                         <a href="#" target="_self" >
-                            消费者技术支持
+                            {{t('footer.menu.consumerTechnologySupport')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="#" target="_self" >
-                            云技术支持
+                             {{t('footer.menu.cloudTechnologySupport')}}
                         </a>
                     </li>
                     
                     <li>
                         <a href="#" target="_blank" rel="noopener">
-                            企业技术支持
+                            {{t('footer.menu.enterpriseTechnologySupport')}}
                         </a>
                     </li>
                     

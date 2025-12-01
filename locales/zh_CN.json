@@ -1,10 +1,11 @@
 {
-  "demo": {
-    "test": "测试"
-  },
-    "navbar": {
+  "navbar": {
     "menu": {
-      "financeData": {"name": "社融数据"},
+      "financeData": {"name": "社融数据", "1version":"1.0旧版本"},
+      "visualizationDashboard": "可视化大屏",
+      "menuList":"菜单列表",
+      "serviceMonitor":"服务监控",
+      "aiAuxiliaryTool": "AI辅助工具",
       "instance": {"name": "在线实例"},
       "document": {"name": "在线文档"},
       "sourceCode": {"name": "源码地址"},
@@ -13,12 +14,24 @@
     }
   },
   
-
-  
  "footer": {
     "menu": {
       "discoverData": "发现数据",
-      "about": "关于数据"
+      "platformIntroduction":"平台简介",
+      "recruitTalents": "招贤纳士",
+      "about": "关于数据",
+      "globalTimes": "环球时报",
+      "financeNews": "财经新闻",
+      "securitiesTimes": "证券时报",
+      "cloudService": "云服务",
+      "newsAndCampaign": "新闻与活动",
+      "ourProducts":"我们的产品",
+      "technologySupport": "技术支持",
+      "supplier": "供应商",
+      "more": "查看更多",
+      "consumerTechnologySupport":"消费者技术支持",
+      "cloudTechnologySupport": "云技术支持",
+      "enterpriseTechnologySupport": "企业技术支持"
     }
   }
 }
