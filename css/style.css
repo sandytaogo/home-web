@@ -73,6 +73,11 @@ p {
     margin: 0;
 }
 
+.header-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -167,7 +172,7 @@ header .navbar .nav-right {
     padding-right: 15px;
     position: absolute;
     right: 70px;
-    top: 13px;
+    top: 7px;
     z-index: 20;
 }
 
@@ -699,6 +704,14 @@ header .langage-select {
         position: relative;
     }
 
+    header .header-container {
+        width: 93.705%;
+    }
+
+    .header {
+        min-height: 78px;
+    }
+
     header .container-custom {
         max-width: 1430.016px;
         width: 85.652%;
@@ -803,7 +816,6 @@ header .langage-select {
         width: auto;
     }
     
-
     header .navbar nav#top-navbar .navbar-nav li.menu-list .nav-open .nav-open-other a {
         background-color: #f7f7f7;
         border: 0;
@@ -839,14 +851,6 @@ header .langage-select {
         overflow: hidden;
         text-align: center;
         width: 100%;
-    }
-
-    header .container {
-        width: 93.705%;
-    }
-
-    .header {
-        min-height: 78px;
     }
 
     header .navbar .navbar-header {

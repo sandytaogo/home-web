@@ -21,20 +21,19 @@
         <h1 class="title">板块涨跌，热力分布</h1>
     </div>
 
-    <div class="parallax-layout">
-        <div class="scroll-container">
-            <div class="item">
-                <img src="../assets/img/data-processing.jpg" no-prefetch loading="lazy" data-swiper-item="item"/>
-            </div>
-            <div class="item">
-                <img src="../assets/img/analysis.png" no-prefetch loading="lazy" data-swiper-item="item"/>
-            </div>
-            <div class="item">
-                <img src="../assets/img/finance-stock.png" no-prefetch loading="lazy" data-swiper-item="item"/>
-            </div>
+    <!-- <div class="parallax-layout"> -->
+    <div class="scroll-container">
+        <div class="item">
+            <img src="../assets/img/data-processing.jpg" no-prefetch loading="lazy" data-swiper-item="item"/>
+        </div>
+        <div class="item">
+            <img src="../assets/img/analysis.png" no-prefetch loading="lazy" data-swiper-item="item"/>
+        </div>
+        <div class="item">
+            <img src="../assets/img/finance-stock.png" no-prefetch loading="lazy" data-swiper-item="item"/>
         </div>
     </div>
-    
+
 </template>
 
 <script setup lang="ts">
@@ -87,10 +86,6 @@
         margin: 10px;
         flex: 1; /* 让所有项目平分剩余空间 */
     }
-    .parallax-layout {
-        /* height: calc(100vh) ; */
-        /* overflow: hidden; */
-    }
     .croll-container {
         width: 100%;
         height: 100vh;
@@ -103,7 +98,8 @@
         height: 100%;
         transition: 1s ease-in-out;
     }
-    img {
+    
+    .item img {
         width: 100%;
         height: 100vh;
         object-fit: cover;

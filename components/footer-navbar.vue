@@ -15,7 +15,7 @@
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-0">
                     
                     <li>
-                        <NuxtLink to="about" target="_self"> {{t('footer.menu.platformIntroduction')}}</NuxtLink>
+                        <NuxtLink to="/about" target="_self"> {{t('footer.menu.platformIntroduction')}}</NuxtLink>
                     </li>
                 
                     <li>
@@ -47,7 +47,11 @@
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-1">
-                    
+                    <li>
+                        <NuxtLink to="/news" target="_self">
+                            新闻动态
+                        </NuxtLink>
+                    </li>
                     <li>
                         <a href="https://tv.cctv.com/cctv2" target="_blank" >
                             {{t('footer.menu.financeNews')}}
@@ -75,13 +79,11 @@
                     <span class="iconfont icon-arrow-down hidden-md hidden-lg"></span>
                 </h3>
                 <ul class="list-unstyled collapse navbar-collapse" id="footer-list-2">
-                    
                     <li>
-                        <a href="#" target="_self">
+                        <NuxtLink to="/news" target="_self">
                             技术专栏
-                        </a>
+                        </NuxtLink>
                     </li>
-                    
                     <li>
                         <a href="#" target="" >
                             跃升数字生产力

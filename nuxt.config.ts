@@ -55,6 +55,9 @@ export default defineNuxtConfig({
       //fallbackLocale: 'zh-CN'
     }
   },
+  experimental: {
+    inlineSSRStyles: true
+  },
   router: {
     options: {
       

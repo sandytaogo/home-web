@@ -155,11 +155,11 @@
     setTimeout(() => {
       queryFinance();
       initMeidaComponet();
-    }, 2000);
+    }, 500);
     
     setInterval(async () => {
      queryFinance();
-    }, 3000);
+    }, 5000);
 
     window.onresize = debounce(function() {	
       risk.resize = {width: document.body.clientWidth, height: document.body.clientHeight};

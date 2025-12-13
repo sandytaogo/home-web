@@ -19,7 +19,7 @@
     <div class="header">
         <header class="affix">
             <div class="navbar">
-                <div class="container nav-container">
+                <div class="header-container nav-container">
                     <div class="navbar-header">
                         <!-- logo left -->
                         <NuxtLink to="/" target="_self" class="logo navbar-brand">
@@ -121,9 +121,15 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="col-md-3 col-sm-3 col-xs-4">
-                                                                    <NuxtLink to="platedistribution" target="_self" class="" rel="noopener">
+                                                                    <NuxtLink to="/platedistribution" target="_self" class="" rel="noopener">
                                                                         <span class="menu-icon icon-website"></span>
                                                                         <p>板块热力图</p>
+                                                                    </NuxtLink>
+                                                                </li>
+                                                                <li class="col-md-3 col-sm-3 col-xs-4">
+                                                                    <NuxtLink to="/news" target="_self" class="" rel="noopener">
+                                                                        <span class="menu-icon icon-website"></span>
+                                                                        <p>视觉测试</p>
                                                                     </NuxtLink>
                                                                 </li>
                                                             </ul>
